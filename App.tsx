@@ -1,45 +1,27 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useState } from 'react';
+import { View, Text, Button } from 'react-native';
+import AppBar from  './src/components/AppBar'
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+const App = () => {
+  
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  let [num, setNum] = useState(0);
 
+  const incNum = () => {
+    setNum(num++);
+    console.log("Increased");
+  }
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
-}
+    <View>
+      <AppBar />
+      <Text style={{ fontSize: 30, textAlign: 'center', padding: 25 }}>App</Text>
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
+      <View style={{ width: 150 }}>
+        <Button title="Increase Number" onPress={incNum} />
+        <Text> Number is: {num}</Text>
+      </View>
     </View>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+};
 
 export default App;
