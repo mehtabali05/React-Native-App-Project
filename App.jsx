@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, TextInput } from 'react-native';
 import AppBar from  './src/components/AppBar'
 import Child from './src/components/Child'
 
@@ -15,25 +15,36 @@ const App = () => {
   // }
 
 
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
-  const updateCount = () => {
-    setCount(count + 1);
-  }
+  // const updateCount = () => {
+  //   setCount(count + 1);
+  // }
+
+
+
+  const [name, setName] = useState('');
   return (
     <View>
       <AppBar />
       {/* <Text style={{ fontSize: 30, textAlign: 'center', padding: 25 }}>App</Text> */}
 
-      <View style={{ width: 150 }}>
+      <View style={{ width: 250 }}>
         {/* <Button title="Increase Number" onPress={incNum} />
         <Text> Number is: {num}</Text> */}
 
 
 
         {/* Props */}
-        <Button title='Increase Count' onPress={updateCount} />
-        <Child count= {count} />
+        {/* <Button title='Increase Count' onPress={updateCount} />
+        <Child count= {count} /> */}
+
+
+
+        {/* TextInput, onChangeText */}
+        <TextInput placeholder='Enter your Name' style= { {fontSize: 20, borderWidth: 2, borderColor: 'white', margin: 10} } value={name} onChangeText={(value) => setName(value)} />
+        <Text>{name}</Text>
+        <Button title='Clear' onPress={() => setName('')} />
       </View>
     </View>
   );
