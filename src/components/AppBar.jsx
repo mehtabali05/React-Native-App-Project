@@ -4,7 +4,7 @@ import React from 'react'
 const AppBar = () => {
   return (
     <View>
-      <Text style= { {fontSize: 20} } >AppBar</Text>
+      <Text style= { {fontSize: 30, marginBlockEnd: 20} } >AppBar</Text>
     </View>
   )
 }
