@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Button, TextInput } from 'react-native';
 import AppBar from  './src/components/AppBar'
 import Child from './src/components/Child'
+import FlatList from './src/components/FlatList'
 
 
 const App = () => {
@@ -42,9 +43,15 @@ const App = () => {
 
 
         {/* TextInput, onChangeText */}
-        <TextInput placeholder='Enter your Name' style= { {fontSize: 20, borderWidth: 2, borderColor: 'white', margin: 10} } value={name} onChangeText={(value) => setName(value)} />
+        {/* <TextInput placeholder='Enter your Name' style= { {fontSize: 20, borderWidth: 2, borderColor: 'white', margin: 10} } value={name} onChangeText={(value) => setName(value)} />
         <Text>{name}</Text>
-        <Button title='Clear' onPress={() => setName('')} />
+        <Button title='Clear' onPress={() => setName('')} /> */}
+
+
+
+
+        {/* FlatList */}
+        <FlatList />
       </View>
     </View>
   );
