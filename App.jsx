@@ -3,6 +3,7 @@ import { View, Text, Button, TextInput } from 'react-native';
 import AppBar from  './src/components/AppBar'
 import Child from './src/components/Child'
 import FlatList from './src/components/FlatList'
+import SectionListScreen from './src/components/SectionListScreen';
 
 
 const App = () => {
@@ -51,7 +52,12 @@ const App = () => {
 
 
         {/* FlatList */}
-        <FlatList />
+        {/* <FlatList /> */}
+
+
+
+        {/* SectionList */}
+        <SectionListScreen />
       </View>
     </View>
   );
