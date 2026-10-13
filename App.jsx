@@ -4,7 +4,8 @@ import AppBar from  './src/components/AppBar'
 // import Child from './src/components/Child'
 // import FlatList from './src/components/FlatList'
 // import SectionListScreen from './src/components/SectionListScreen';
-import LoginForm from './src/components/LoginForm';
+// import LoginForm from './src/components/LoginForm';
+import ContactListScreen from './src/screens/contact/ContactListScreen';
 
 
 const App = () => {
@@ -64,7 +65,12 @@ const App = () => {
 
 
         {/* Creating Login Form */}
-        <LoginForm />
+        {/* <LoginForm /> */}
+
+
+
+        {/* Display custom component using FlatList */}
+        <ContactListScreen />
       </View>
     </View>
   );
