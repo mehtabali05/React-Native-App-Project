@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, Button, TextInput } from 'react-native';
 import AppBar from  './src/components/AppBar'
-import Child from './src/components/Child'
-import FlatList from './src/components/FlatList'
-import SectionListScreen from './src/components/SectionListScreen';
+// import Child from './src/components/Child'
+// import FlatList from './src/components/FlatList'
+// import SectionListScreen from './src/components/SectionListScreen';
+import LoginForm from './src/components/LoginForm';
 
 
 const App = () => {
@@ -31,7 +32,7 @@ const App = () => {
       <AppBar />
       {/* <Text style={{ fontSize: 30, textAlign: 'center', padding: 25 }}>App</Text> */}
 
-      <View style={{ width: 250 }}>
+      <View >
         {/* <Button title="Increase Number" onPress={incNum} />
         <Text> Number is: {num}</Text> */}
 
@@ -57,7 +58,13 @@ const App = () => {
 
 
         {/* SectionList */}
-        <SectionListScreen />
+        {/* <SectionListScreen /> */}
+
+
+
+
+        {/* Creating Login Form */}
+        <LoginForm />
       </View>
     </View>
   );
