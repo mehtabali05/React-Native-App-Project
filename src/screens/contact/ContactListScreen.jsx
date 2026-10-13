@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, ScrollView } from 'react-native'
 import React from 'react'
 
 import{ userData} from './userContactInfo'
@@ -9,7 +9,7 @@ const ContactListScreen = () => {
     const renderItem = ({item}) => 
         <ContactItem name={item.name} email={item.email} />
   return (
-    <View >
+    <ScrollView >
         <FlatList 
             data={userData}
             renderItem={renderItem}
@@ -17,7 +17,7 @@ const ContactListScreen = () => {
             contentContainerStyle={styles.container}
             ListHeaderComponent={<Text style={styles.heading}>Contact</Text>}
         />
-    </View>
+    </ScrollView>
   )
 }
 

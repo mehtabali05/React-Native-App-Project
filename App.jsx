@@ -5,7 +5,8 @@ import AppBar from  './src/components/AppBar'
 // import FlatList from './src/components/FlatList'
 // import SectionListScreen from './src/components/SectionListScreen';
 // import LoginForm from './src/components/LoginForm';
-import ContactListScreen from './src/screens/contact/ContactListScreen';
+// import ContactListScreen from './src/screens/contact/ContactListScreen';
+import Grid from './src/components/Grid'
 
 
 const App = () => {
@@ -29,11 +30,11 @@ const App = () => {
 
   const [name, setName] = useState('');
   return (
-    <View>
+    <View style={{flex: 1}}>
       <AppBar />
       {/* <Text style={{ fontSize: 30, textAlign: 'center', padding: 25 }}>App</Text> */}
 
-      <View >
+      {/* <View style={{flex: 1}}> */}
         {/* <Button title="Increase Number" onPress={incNum} />
         <Text> Number is: {num}</Text> */}
 
@@ -70,8 +71,15 @@ const App = () => {
 
 
         {/* Display custom component using FlatList */}
-        <ContactListScreen />
-      </View>
+        {/* <ContactListScreen /> */}
+
+
+
+
+
+        {/* Create Grid with ScrollView & Map function */}
+        <Grid />
+      {/* </View> */}
     </View>
   );
 };
