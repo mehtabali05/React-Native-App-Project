@@ -7,6 +7,7 @@ import AppBar from  './src/components/AppBar'
 // import LoginForm from './src/components/LoginForm';
 // import ContactListScreen from './src/screens/contact/ContactListScreen';
 import Grid from './src/components/Grid'
+import Toggle from './src/components/Toggle';
 
 
 const App = () => {
@@ -78,7 +79,12 @@ const App = () => {
 
 
         {/* Create Grid with ScrollView & Map function */}
-        <Grid />
+        {/* <Grid /> */}
+
+
+
+        {/* Toggle Button */}
+        <Toggle />
       {/* </View> */}
     </View>
   );
