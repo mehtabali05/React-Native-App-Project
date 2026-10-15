@@ -11,6 +11,8 @@ import Toggle from './src/components/Toggle';
 import ButtonTypes from './src/components/ButtonTypes';
 import ActivityIndicator from './src/components/ActivityIndicator';
 import StatusbarComponent from './src/components/StatusbarComponent';
+import DialogueBox from './src/components/DialogueBox';
+
 
 
 const App = () => {
@@ -37,7 +39,7 @@ const App = () => {
     <View style={{flex: 1}}>
       {/* <AppBar /> */}
       {/* <Text style={{ fontSize: 30, textAlign: 'center', padding: 25 }}>App</Text> */}
-
+ 
       {/* <View style={{flex: 1}}> */}
         {/* <Button title="Increase Number" onPress={incNum} />
         <Text> Number is: {num}</Text> */}
@@ -105,7 +107,13 @@ const App = () => {
 
 
         {/* StatusBar */}
-        <StatusbarComponent />
+        {/* <StatusbarComponent /> */}
+
+
+
+
+        {/* Modal */}
+        <DialogueBox />
     </View>
   );
 };
