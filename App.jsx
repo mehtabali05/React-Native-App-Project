@@ -10,6 +10,7 @@ import Grid from './src/components/Grid'
 import Toggle from './src/components/Toggle';
 import ButtonTypes from './src/components/ButtonTypes';
 import ActivityIndicator from './src/components/ActivityIndicator';
+import StatusbarComponent from './src/components/StatusbarComponent';
 
 
 const App = () => {
@@ -34,7 +35,7 @@ const App = () => {
   const [name, setName] = useState('');
   return (
     <View style={{flex: 1}}>
-      <AppBar />
+      {/* <AppBar /> */}
       {/* <Text style={{ fontSize: 30, textAlign: 'center', padding: 25 }}>App</Text> */}
 
       {/* <View style={{flex: 1}}> */}
@@ -98,7 +99,13 @@ const App = () => {
 
 
         {/* ActivityInicatr  */}
-        <ActivityIndicator />
+        {/* <ActivityIndicator /> */}
+
+
+
+
+        {/* StatusBar */}
+        <StatusbarComponent />
     </View>
   );
 };
