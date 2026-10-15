@@ -9,6 +9,7 @@ import AppBar from  './src/components/AppBar'
 import Grid from './src/components/Grid'
 import Toggle from './src/components/Toggle';
 import ButtonTypes from './src/components/ButtonTypes';
+import ActivityIndicator from './src/components/ActivityIndicator';
 
 
 const App = () => {
@@ -91,7 +92,13 @@ const App = () => {
 
 
         {/* TouchableOpacity & TouchableHighlight */}
-        <ButtonTypes />
+        {/* <ButtonTypes /> */}
+
+
+
+
+        {/* ActivityInicatr  */}
+        <ActivityIndicator />
     </View>
   );
 };
