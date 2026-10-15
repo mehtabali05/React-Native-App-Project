@@ -8,6 +8,7 @@ import AppBar from  './src/components/AppBar'
 // import ContactListScreen from './src/screens/contact/ContactListScreen';
 import Grid from './src/components/Grid'
 import Toggle from './src/components/Toggle';
+import ButtonTypes from './src/components/ButtonTypes';
 
 
 const App = () => {
@@ -84,8 +85,13 @@ const App = () => {
 
 
         {/* Toggle Button */}
-        <Toggle />
-      {/* </View> */}
+        {/* <Toggle /> */}
+
+
+
+
+        {/* TouchableOpacity & TouchableHighlight */}
+        <ButtonTypes />
     </View>
   );
 };
