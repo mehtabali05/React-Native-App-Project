@@ -13,6 +13,7 @@ import ActivityIndicator from './src/components/ActivityIndicator';
 import StatusbarComponent from './src/components/StatusbarComponent';
 import DialogueBox from './src/components/DialogueBox';
 import AlertBox from './src/components/AlertBox';
+import GET_API from './src/components/GET_API';
 
 
 
@@ -119,7 +120,12 @@ const App = () => {
 
 
         {/* Alert Box */}
-        <AlertBox />
+        {/* <AlertBox /> */}
+
+
+
+        {/* Creating API using josn-server */}
+        <GET_API />
     </View>
   );
 };
