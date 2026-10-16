@@ -12,6 +12,7 @@ import ButtonTypes from './src/components/ButtonTypes';
 import ActivityIndicator from './src/components/ActivityIndicator';
 import StatusbarComponent from './src/components/StatusbarComponent';
 import DialogueBox from './src/components/DialogueBox';
+import AlertBox from './src/components/AlertBox';
 
 
 
@@ -113,7 +114,12 @@ const App = () => {
 
 
         {/* Modal */}
-        <DialogueBox />
+        {/* <DialogueBox /> */}
+
+
+
+        {/* Alert Box */}
+        <AlertBox />
     </View>
   );
 };
