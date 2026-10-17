@@ -18,14 +18,29 @@ const POST_API = () => {
         });
     }
 
-    const handleSubmit = async () => {
+    // const handleSubmit = async () => {
+    //     try {
+    //         const {data} = await axios.post("http://192.168.1.2:3000/users", formData);
+    //         Alert.alert('Form Data', 'Data submitted successfully');
+    //         console.log("Form Data: ", data);
+    //         setFormData(initialData);
+    //     } catch (error) {
+    //         Alert.alert('Data failed', 'Data submission failed');
+    //     }
+    // }
+
+
+    const handleUpdate = async () => {
         try {
-            const {data} = await axios.post("http://192.168.1.2:3000/users", formData);
-            Alert.alert('Form Data', 'Data submitted successfully');
-            console.log("Form Data: ", data);
+            const {data} = await axios.put(`http://192.168.1.2:3000/users/${formData.id}`, {
+                name: formData.name,
+                email: formData.email
+            });
+            Alert.alert('Success', 'Data updated successfully');
+            console.log("Updated data: ", data);
             setFormData(initialData);
         } catch (error) {
-            Alert.alert('Data failed', 'Data submission failed');
+            Alert.alert('Error', 'Failed to update data');
         }
     }
   return (
@@ -48,7 +63,10 @@ const POST_API = () => {
         onChangeText={(value) => handleInput('email', value)}
       />
 
-      <Button title='Submit' onPress={handleSubmit} />
+      <Button title='Submit' 
+        // onPress={handleSubmit} 
+        onPress={handleUpdate}
+      />
     </View>
   )
 }
