@@ -30,17 +30,44 @@ const POST_API = () => {
     // }
 
 
-    const handleUpdate = async () => {
+    // const handleUpdate = async () => {
+    //     try {
+    //         const {data} = await axios.put(`http://192.168.1.2:3000/users/${formData.id}`, {
+    //             name: formData.name,
+    //             email: formData.email
+    //         });
+    //         Alert.alert('Success', 'Data updated successfully');
+    //         console.log("Updated data: ", data);
+    //         setFormData(initialData);
+    //     } catch (error) {
+    //         Alert.alert('Error', 'Failed to update data');
+    //     }
+    // }
+
+    // const handlePatch = async () => {
+    //     try {
+    //         const {data} = await axios.patch(`http://192.168.1.2:3000/users/${formData.id}`,{
+    //             ...formData.name && {name: formData.name},
+    //             ...formData.email && {email: formData.email}
+    //         });
+
+    //         console.log("Patched data: ", data);
+    //         setFormData(initialData);
+    //         Alert.alert('success','data updated successfully');
+    //     } catch (error) {
+    //         Alert.alert('Error', error.response?.data || error.message);
+    //     }
+    // }
+
+
+    const handleDelete = async () => {
         try {
-            const {data} = await axios.put(`http://192.168.1.2:3000/users/${formData.id}`, {
-                name: formData.name,
-                email: formData.email
-            });
-            Alert.alert('Success', 'Data updated successfully');
-            console.log("Updated data: ", data);
+            const {data} = await axios.delete(`http://192.168.1.2:3000/users/${formData.id}`);
+            Alert.alert('success','data deleted successfuly');
+            console.log("Deleted data: ", data);
             setFormData(initialData);
         } catch (error) {
-            Alert.alert('Error', 'Failed to update data');
+            Alert.alert('Error', 'failed to delete data');
         }
     }
   return (
@@ -65,7 +92,9 @@ const POST_API = () => {
 
       <Button title='Submit' 
         // onPress={handleSubmit} 
-        onPress={handleUpdate}
+        // onPress={handleUpdate}
+        // onPress={handlePatch}
+        onPress={handleDelete}
       />
     </View>
   )

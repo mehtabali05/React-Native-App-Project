@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "name": "Ahmed",
+      "name": "Haider",
       "email": "ahmed@gmail.com",
       "id": "1"
     },
@@ -14,11 +14,6 @@
       "id": "32igDGY3AwI",
       "name": "Ali",
       "email": "ali@gmail.com"
-    },
-    {
-      "id": "66C1wpYnO9U",
-      "name": "Khan",
-      "email": "mehtabalics7@gmail.com"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
