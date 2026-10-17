@@ -9,6 +9,17 @@
       "id": "2",
       "name": "Sara Ali",
       "email": "sara.ali@example.com"
+    },
+    {
+      "id": "32igDGY3AwI",
+      "name": "Ali",
+      "email": "ali@gmail.com"
+    },
+    {
+      "id": "66C1wpYnO9U",
+      "name": "Khan",
+      "email": "mehtabalics7@gmail.com"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

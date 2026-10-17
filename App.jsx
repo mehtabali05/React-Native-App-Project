@@ -14,6 +14,7 @@ import StatusbarComponent from './src/components/StatusbarComponent';
 import DialogueBox from './src/components/DialogueBox';
 import AlertBox from './src/components/AlertBox';
 import GET_API from './src/components/GET_API';
+import POST_API from './src/components/POST_API';
 
 
 
@@ -125,7 +126,12 @@ const App = () => {
 
 
         {/* Creating API using josn-server */}
-        <GET_API />
+        {/* <GET_API /> */}
+
+
+
+        {/* Post API */}
+        <POST_API />
     </View>
   );
 };
