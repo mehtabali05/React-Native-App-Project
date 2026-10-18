@@ -16,6 +16,7 @@ import AlertBox from './src/components/AlertBox';
 import GET_API from './src/components/GET_API';
 import POST_API from './src/components/POST_API';
 import PlatformExample from './src/components/PlatformExample';
+import SearchExample from './src/components/SearchExample';
 
 
 
@@ -136,7 +137,12 @@ const App = () => {
 
 
         {/* Platform Component */}
-        <PlatformExample />
+        {/* <PlatformExample /> */}
+
+
+
+        {/* Search functionality */}
+        <SearchExample />
     </View>
   );
 };
