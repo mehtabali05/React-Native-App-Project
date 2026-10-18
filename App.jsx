@@ -15,6 +15,7 @@ import DialogueBox from './src/components/DialogueBox';
 import AlertBox from './src/components/AlertBox';
 import GET_API from './src/components/GET_API';
 import POST_API from './src/components/POST_API';
+import PlatformExample from './src/components/PlatformExample';
 
 
 
@@ -131,7 +132,11 @@ const App = () => {
 
 
         {/* Post API */}
-        <POST_API />
+        {/* <POST_API /> */}
+
+
+        {/* Platform Component */}
+        <PlatformExample />
     </View>
   );
 };
