@@ -1,10 +1,11 @@
 import { View, Text, Button } from 'react-native'
 import React from 'react'
 
-const Home = ({navigation}) => {
+const Home = ({navigation, route}) => {
+  const {username} = route.params;
   return (
     <View>
-      <Text>Home</Text>
+      <Text> Welcome {username} on Home Screen</Text>
       <Button title='Go to About screen' onPress={() => navigation.navigate('About')} />
     </View>
   )
