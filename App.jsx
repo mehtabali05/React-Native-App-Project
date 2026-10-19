@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
+import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
 import AppBar from  './src/components/AppBar'
 // import Child from './src/components/Child'
 // import FlatList from './src/components/FlatList'
@@ -43,6 +43,9 @@ const App = () => {
   // }
 
   const Stack = createNativeStackNavigator();
+
+  const headerTitle = () => <Button title='one' />;
+  const headerRight = () => <Button title='two' />;
 
   const [name, setName] = useState('');
   return (
@@ -155,12 +158,46 @@ const App = () => {
         <NavigationContainer>
           <Stack.Navigator  
             // initialRouteName='Home'
+            screenOptions={{
+              headerStyle: styles.header,
+              headerTitleStyle: styles.title,
+              headerTintColor: 'white',
+              contentStyle: styles.screen
+            }}
           >
-            <Stack.Screen name='Login Screen' component={LoginScreen} />
+            <Stack.Screen 
+              name='LoginScreen' 
+              component={LoginScreen} 
+              options={{
+                title: '',
+                // headerTitle: headerTitle,
+                headerRight: headerRight,
+
+              }}
+            />
             <Stack.Screen 
               name='Home Screen' 
               component={Home} 
               // options={{headerShown: false}} 
+              // options={{
+              //   contentStyle: {
+              //     backgroundColor: 'lightgreen'
+              //   },
+              //   headerTintColor: 'white',
+              //   headerStyle: {
+              //     backgroundColor: 'green'
+              //   },
+              //   headerTitleStyle: {
+              //     fontSize: 22,
+              //     fontWeight: 'bold',
+              //   }
+              // }}
+              options={{
+                title: '',
+                HeaderTitle: headerTitle,
+                HeaderRight: headerRight,
+
+              }}
             />
             <Stack.Screen name='About' component={About} />
           </Stack.Navigator>
@@ -168,5 +205,19 @@ const App = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: 'green'
+  },
+  title: {
+    // color: 'white',
+    fontSize: 22,
+    fontWeight: 'bold'
+  },
+  screen: {
+    backgroundColor: 'lightgreen'
+  }
+});
 
 export default App;
