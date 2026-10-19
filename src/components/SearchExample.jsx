@@ -16,8 +16,8 @@ const SearchExample = () => {
     );
 
     const renderItem = ({item}) => (
-        <View>
-            <Text>{item.name}</Text>
+        <View style={styles.list}>
+            <Text style={styles.text}>{item.name}</Text>
         </View>
     );
   return (
@@ -26,6 +26,7 @@ const SearchExample = () => {
 
       <TextInput 
         placeholder='Search user'
+        placeholderTextColor={'white'}
         value={searchQuery}
         onChangeText={setSearchQuery}
         style={styles.searchBar}
@@ -35,7 +36,7 @@ const SearchExample = () => {
         data={filteredData}
         keyExtractor={item => item.id.toString()}
         renderItem={renderItem}
-        contentContainerStyle={styles.list}
+        // contentContainerStyle={}
       />
     </View>
   )
@@ -52,6 +53,26 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 20,
         marginTop: 20,
+        color: 'white'
+    },
+    list: {
+        borderWidth: 2,
+        borderColor: 'white',
+        borderRadius: 10,
+        paddingHorizontal: 25,
+        paddingVertical: 10,
+        marginBottom: 10
+    },
+    text: {
+        color: 'white'
+    },
+    searchBar: {
+        paddingVertical: 10,
+        paddingHorizontal: 25,
+        borderColor: 'white',
+        borderRadius: 10,
+        borderWidth: 2,
+        marginBottom: 20,
         color: 'white'
     }
 });

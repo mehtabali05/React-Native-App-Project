@@ -17,6 +17,10 @@ import GET_API from './src/components/GET_API';
 import POST_API from './src/components/POST_API';
 import PlatformExample from './src/components/PlatformExample';
 import SearchExample from './src/components/SearchExample';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/navigation-screens/Home';
+import About from './src/navigation-screens/About';
 
 
 
@@ -37,7 +41,7 @@ const App = () => {
   //   setCount(count + 1);
   // }
 
-
+  const Stack = createNativeStackNavigator();
 
   const [name, setName] = useState('');
   return (
@@ -142,7 +146,17 @@ const App = () => {
 
 
         {/* Search functionality */}
-        <SearchExample />
+        {/* <SearchExample /> */}
+
+
+
+        {/* Navigators */}
+        <NavigationContainer>
+          <Stack.Navigator  initialRouteName='Home'>
+            <Stack.Screen name='Home' component={Home}  />
+            <Stack.Screen name='About' component={About} />
+          </Stack.Navigator>
+        </NavigationContainer>
     </View>
   );
 };
