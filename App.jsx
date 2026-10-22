@@ -22,6 +22,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/navigation-screens/Home';
 import About from './src/navigation-screens/About';
 import LoginScreen from './src/navigation-screens/LoginScreen';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import HomeScreen from './src/navigation-screens/drawer/HomeScreen';
+import ProfileScreen from './src/navigation-screens/drawer/ProfileScreen';
+import SettingScreen from './src/navigation-screens/drawer/SettingScreen';
 
 
 
@@ -42,10 +46,15 @@ const App = () => {
   //   setCount(count + 1);
   // }
 
-  const Stack = createNativeStackNavigator();
+  // const Stack = createNativeStackNavigator();
 
-  const headerTitle = () => <Button title='one' />;
-  const headerRight = () => <Button title='two' />;
+  // const headerTitle = () => <Button title='one' />;
+  // const headerRight = () => <Button title='two' />;
+
+
+
+
+  const Drawer = createDrawerNavigator();
 
   const [name, setName] = useState('');
   return (
@@ -154,8 +163,8 @@ const App = () => {
 
 
 
-        {/* Navigators */}
-        <NavigationContainer>
+        {/* Stack Navigators */}
+        {/* <NavigationContainer>
           <Stack.Navigator  
             // initialRouteName='Home'
             screenOptions={{
@@ -201,6 +210,19 @@ const App = () => {
             />
             <Stack.Screen name='About' component={About} />
           </Stack.Navigator>
+        </NavigationContainer> */}
+
+
+
+
+
+        {/* Drawer Navigation */}
+        <NavigationContainer>
+          <Drawer.Navigator>
+            <Drawer.Screen name="Home" component={HomeScreen} />
+            <Drawer.Screen name="Profile" component={ProfileScreen} />
+            <Drawer.Screen name="Settings" component={SettingScreen} />
+          </Drawer.Navigator>
         </NavigationContainer>
     </View>
   );
