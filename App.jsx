@@ -1,3 +1,4 @@
+// import 'react-native-gesture-handler'
 import React, { useState } from 'react';
 import { View, Text, Button, TextInput, StyleSheet } from 'react-native';
 import AppBar from  './src/components/AppBar'
@@ -19,17 +20,38 @@ import PlatformExample from './src/components/PlatformExample';
 import SearchExample from './src/components/SearchExample';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './src/navigation-screens/Home';
+// import Home from './src/navigation-screens/Home';
 import About from './src/navigation-screens/About';
 import LoginScreen from './src/navigation-screens/LoginScreen';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+// import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from './src/navigation-screens/drawer/HomeScreen';
 import ProfileScreen from './src/navigation-screens/drawer/ProfileScreen';
 import SettingScreen from './src/navigation-screens/drawer/SettingScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Home from './src/navigation-screens/tab-navigation/Home';
+import Profile from './src/navigation-screens/tab-navigation/Profile';
+import Setting from './src/navigation-screens/tab-navigation/Setting';
+import Icon from '@react-native-vector-icons/ionicons';
 
-
+// const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
+
+  const getTabBarIcon = (routeName,focused,color,size) => {
+    let iconName;
+    if(routeName === 'Home'){
+      iconName = focused ? 'home' : 'home-outline';
+    }
+    else if(routeName === 'Profile'){
+      iconName = focused ? 'person' : 'person-outline';
+    }
+    else if(routeName === 'Settings'){
+      iconName = focused ? 'settings' : 'settings-outline';
+    }
+
+    return <Icon name={iconName} size={size} color={color} />;
+  }
   
 
   // let [num, setNum] = useState(0);
@@ -54,7 +76,7 @@ const App = () => {
 
 
 
-  const Drawer = createDrawerNavigator();
+  
 
   const [name, setName] = useState('');
   return (
@@ -217,13 +239,38 @@ const App = () => {
 
 
         {/* Drawer Navigation */}
-        <NavigationContainer>
+       {/* <NavigationContainer>
           <Drawer.Navigator>
             <Drawer.Screen name="Home" component={HomeScreen} />
             <Drawer.Screen name="Profile" component={ProfileScreen} />
             <Drawer.Screen name="Settings" component={SettingScreen} />
           </Drawer.Navigator>
         </NavigationContainer>
+        */}
+
+
+
+
+
+        {/* Bottom Tab Navigation */}
+        <NavigationContainer>
+          <Tab.Navigator
+            screenOptions={({route}) => ({
+              tabBarIcon: ({focused, color, size}) => getTabBarIcon(route.name, focused, color, size),
+              tabBarActiveTintColor: 'green',
+              tabBarInactiveTintColor: 'lightgreen',
+              tabBarStyle: {
+                paddingBottom: 5,
+                height: 60
+              }
+            })}
+          >
+            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Profile" component={Profile} />
+            <Tab.Screen name="Settings" component={Setting} />
+          </Tab.Navigator>
+        </NavigationContainer>
+
     </View>
   );
 };
