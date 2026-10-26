@@ -32,9 +32,14 @@ import Home from './src/navigation-screens/tab-navigation/Home';
 import Profile from './src/navigation-screens/tab-navigation/Profile';
 import Setting from './src/navigation-screens/tab-navigation/Setting';
 import Icon from '@react-native-vector-icons/ionicons';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// import Home from './src/navigation-screens/tab-navigation/Home';
+// import Profile from './src/navigation-screens/tab-navigation/Profile';
+// import Setting from './src/navigation-screens/tab-navigation/Setting';
 
 // const Drawer = createDrawerNavigator();
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 const App = () => {
 
@@ -253,7 +258,7 @@ const App = () => {
 
 
         {/* Bottom Tab Navigation */}
-        <NavigationContainer>
+        {/* <NavigationContainer>
           <Tab.Navigator
             screenOptions={({route}) => ({
               tabBarIcon: ({focused, color, size}) => getTabBarIcon(route.name, focused, color, size),
@@ -264,6 +269,30 @@ const App = () => {
                 height: 60
               }
             })}
+          >
+            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Profile" component={Profile} />
+            <Tab.Screen name="Settings" component={Setting} />
+          </Tab.Navigator>
+        </NavigationContainer> */}
+
+
+
+
+        {/* Top Material Tab Navigation */}
+        <NavigationContainer>
+          <Tab.Navigator
+            screenOptions={{
+              tabBarLabelStyle: { fontSize: 20 },
+              // tabBarItemStyle: { width: 150 },
+              tabBarStyle: { backgroundColor: 'powderblue' },
+              tabBarIndicatorStyle: {
+                backgroundColor: 'green',
+                height: 5
+              },
+              tabBarActiveTintColor: 'green',
+              // tabBarInactiveTintColor: 'lightgreen'
+            }}
           >
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Profile" component={Profile} />
